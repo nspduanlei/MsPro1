@@ -8,8 +8,8 @@ android {
         applicationId "com.dl.ms.mspro1"
         minSdkVersion 16
         targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        versionCode 12
+        versionName "1.2"
     }
     buildTypes {
         release {
@@ -28,7 +28,6 @@ dependencies {
     implementation project(':networklib')
     implementation project(':uilibrary')
     implementation project(':baselib')
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 repositories {
     mavenCentral()
