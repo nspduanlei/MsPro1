@@ -8,6 +8,7 @@ import android.graphics.*;
 import android.graphics.drawable.*;
 import android.net.*;
 import android.os.*;
+import android.support.v4.content.FileProvider;
 import android.view.*;
 import android.widget.*;
 import java.io.*;
@@ -137,9 +138,19 @@ public class MUp extends Activity{
         Intent intent = new Intent();
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.setAction(Intent.ACTION_VIEW);
-        intent.setDataAndType(Uri.fromFile(file),
-							  "application/vnd.android.package-archive");
-        startActivity(intent);
+
+        Uri data;
+        // 判断版本大于等于7.0
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            // "net.csdn.blog.ruancoder.fileprovider"即是在清单文件中配置的authorities
+            data = FileProvider.getUriForFile(this, "com.dl.ms.mspro1.provider", file);
+            // 给目标应用一个临时授权
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        } else {
+            data = Uri.fromFile(file);
+        }
+        intent.setDataAndType(data, "application/vnd.android.package-archive");
+            startActivity(intent);
     }
 
     File file;

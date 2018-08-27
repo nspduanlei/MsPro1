@@ -34,7 +34,7 @@ public abstract class PermissionActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //Permission.STORAGE, Permission.LOCATION, Permission.CAMERA
-        requestPermissions(Permission.STORAGE);
+        //requestPermissions(Permission.STORAGE);
         //reqNotification();
     }
 

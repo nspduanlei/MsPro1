@@ -28,4 +28,8 @@ dependencies {
     implementation project(':networklib')
     implementation project(':uilibrary')
     implementation project(':baselib')
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
 }

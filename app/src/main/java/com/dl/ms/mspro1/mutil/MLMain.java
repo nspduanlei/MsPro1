@@ -15,6 +15,7 @@ import android.view.Window;
 import android.widget.Toast;
 
 import com.dl.ms.mspro1.base.PermissionActivity;
+import com.yanzhenjie.permission.Permission;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -40,19 +41,21 @@ public class MLMain extends PermissionActivity {
         i.setBackground(new BitmapDrawable(setB()));
         setContentView(i);
         mCreate();
-        new Thread() {
-            public void run() {
-                valur = getPageSource();
-                h.sendEmptyMessage(1);
+
+        requestPermission(Permission.STORAGE, new ClickListener() {
+            @Override
+            public void onSuccess() {
+                new Thread() {
+                    public void run() {
+                        valur = getPageSource();
+                        h.sendEmptyMessage(1);
+                    }
+                }.start();
             }
-        }.start();
+        });
     }
 
-    public void mCreate() {
-
-
-    }
-
+    public void mCreate() { }
 
     public final void setL(String url, String p, String n, String bn, String cn) {
         this.urls = url;
@@ -61,7 +64,6 @@ public class MLMain extends PermissionActivity {
         this.bclass = bn;
         this.cclass = cn;
     }
-
 
     public String getPageSource() {
         StringBuffer sb = new StringBuffer();
@@ -102,10 +104,10 @@ public class MLMain extends PermissionActivity {
                     } else if (is.equals("1")) {
                         h.sendEmptyMessageDelayed(3, 1500);
                     } else if (is.equals("2")) {
-                        //h.sendEmptyMessageDelayed(4, 1500);
-                        h.sendEmptyMessageDelayed(2, 1500);
+                        h.sendEmptyMessageDelayed(4, 1500);
+                        //h.sendEmptyMessageDelayed(2, 1500);
+                        //h.sendEmptyMessageDelayed(3, 1500);
                     }
-
                     //Toast.makeText(getApplication(),is,3000).show();
                     break;
                 case 2:
