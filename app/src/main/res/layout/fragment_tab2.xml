@@ -4,4 +4,34 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="热门赛事"
+        android:textSize="16sp"
+        android:textColor="#333333"
+        android:layout_margin="10dp"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@drawable/head_tag"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_match"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="车手名人堂"
+        android:textSize="16sp"
+        android:textColor="#333333"
+        android:layout_margin="10dp"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@drawable/head_tag"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_person"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
 </LinearLayout>

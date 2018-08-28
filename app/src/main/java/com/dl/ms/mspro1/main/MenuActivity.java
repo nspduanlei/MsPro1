@@ -30,6 +30,7 @@ public class MenuActivity extends AppCompatActivity implements
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_lc_test);
         initView();
         initFragment();
@@ -38,12 +39,12 @@ public class MenuActivity extends AppCompatActivity implements
     private void initView() {
         CustomTabView mCustomTabView = findViewById(R.id.tabView);
 
-        Tab tab1 = new Tab().setText("品牌推荐")
+        Tab tab1 = new Tab().setText("首页")
                 .setNormalIcon(R.drawable.ic_tab_strip_icon_category)
                 .setPressedIcon(R.drawable.ic_tab_strip_icon_category_selected);
         mCustomTabView.addTab(tab1);
 
-        Tab tab2 = new Tab().setText("品牌热点")
+        Tab tab2 = new Tab().setText("资讯")
                 .setNormalIcon(R.drawable.ic_tab_strip_icon_pgc)
                 .setPressedIcon(R.drawable.ic_tab_strip_icon_pgc_selected);
         mCustomTabView.addTab(tab2);

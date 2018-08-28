@@ -6,3 +6,8 @@ package com.app.dl.networklib.domain.model
  */
 
 data class Car(val name: String, val img: String, val detail: String)
+
+data class Match(val title: String, val img: String,
+                 val detail: String, val status: String)
+
+data class Person(val name: String, val img: String, val tags: String)

@@ -25,6 +25,8 @@ dependencies {
     //implementation 'com.android.support:appcompat-v7:27.1.1'
     //权限申请
     implementation 'com.yanzhenjie:permission:1.1.2'
+    implementation 'com.bigkoo:ConvenientBanner:2.1.4'
+
     implementation project(':networklib')
     implementation project(':uilibrary')
     implementation project(':baselib')

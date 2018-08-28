@@ -4,13 +4,20 @@ import android.content.Context;
 import android.widget.ImageView;
 
 import com.app.dl.baselib.fun.ImageLoad;
+import com.app.dl.networklib.R;
 import com.app.dl.networklib.utils.StringUtils;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.RequestBuilder;
+import com.bumptech.glide.TransitionOptions;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
+import com.bumptech.glide.request.RequestOptions;
 
 /**
  * Created by duanlei on 2016/11/8.
  */
 public class GlideImageLoad implements ImageLoad {
+
 
     public void loadUrl(Context context, ImageView iv, String url) {
         if (StringUtils.isNullOrEmpty(url)) {
@@ -19,20 +26,24 @@ public class GlideImageLoad implements ImageLoad {
 
         Glide.with(context)
                 .load(url)
-//                .crossFade()
                 .into(iv);
-
     }
 
     public void loadUrlDefault(Context context, ImageView iv, String url, int resId) {
         if (StringUtils.isNullOrEmpty(url)) {
             return;
         }
-//        Glide.with(context)
-//                .load(url)
-//                .placeholder(resId)
-//                .crossFade()
-//                .into(iv);
+
+        RequestOptions options = new RequestOptions()
+                .placeholder(resId)
+                .error(resId)
+                .centerCrop();
+
+        Glide.with(context)
+                .load(url)
+                .transition(new DrawableTransitionOptions().crossFade())
+                .apply(options)
+                .into(iv);
     }
 
     public void loadLargeUrl(Context context, ImageView iv, String url) {

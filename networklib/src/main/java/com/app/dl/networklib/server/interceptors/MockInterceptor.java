@@ -54,10 +54,12 @@ public class MockInterceptor implements Interceptor {
 
         //if (path.matches("^(/users/)+[^/]*+(/repos)$")) {//匹配/users/{username}/repos
 
-        if (path.equals("/testapi/test")) {
-            responseString = getResponseString("test.json");
-        } else if (path.equals("/testapi/test1")) {
-            responseString = getResponseString("test1.json");
+        if (path.equals("/testapi/brand")) {
+            responseString = getResponseString("brand.json");
+        } else if (path.equals("/testapi/match")) {
+            responseString = getResponseString("match.json");
+        } else if (path.equals("/testapi/person")) {
+            responseString = getResponseString("person.json");
         }
 
         return responseString;
