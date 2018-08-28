@@ -79,7 +79,7 @@ class Tab1Fragment : BaseFragment() {
     }
 
 
-    /***************轮播 start */
+    /***************轮播 start ***************/
     private var mLocalImages = arrayListOf<MyBanner>()
 
     private fun initBanner() {
@@ -130,6 +130,5 @@ class Tab1Fragment : BaseFragment() {
             tvDetail = itemView.findViewById(R.id.tv_detail)
         }
     }
-
     /***************轮播 end*********************/
 }
