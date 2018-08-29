@@ -18,6 +18,17 @@ import com.bumptech.glide.request.RequestOptions;
  */
 public class GlideImageLoad implements ImageLoad {
 
+    private GlideImageLoad() {}
+
+    public static GlideImageLoad getInstance() {
+        return SingletonHolder.sInstance;
+    }
+
+    private static class SingletonHolder{
+        private static final GlideImageLoad sInstance =
+                new GlideImageLoad();
+    }
+
 
     public void loadUrl(Context context, ImageView iv, String url) {
         if (StringUtils.isNullOrEmpty(url)) {

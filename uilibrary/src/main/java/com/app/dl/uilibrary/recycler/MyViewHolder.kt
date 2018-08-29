@@ -12,6 +12,7 @@ import android.util.SparseArray
 import android.view.View
 import android.widget.*
 import com.app.dl.baselib.`fun`.ImageLoad
+import com.app.dl.uilibrary.R
 
 
 /**
@@ -264,6 +265,12 @@ class MyViewHolder(private val mConvertView: View, private val mContext: Context
         val view = getView<View>(viewId)
         view.rotation = degress.toFloat()
         return this
+    }
+
+    fun setLinearLayout(llTags: Int, textViews: List<TextView>) {
+
+        val view = getView<LinearLayout>(llTags)
+
     }
 
 

@@ -40,18 +40,18 @@ public class MenuActivity extends AppCompatActivity implements
         CustomTabView mCustomTabView = findViewById(R.id.tabView);
 
         Tab tab1 = new Tab().setText("首页")
-                .setNormalIcon(R.drawable.ic_tab_strip_icon_category)
-                .setPressedIcon(R.drawable.ic_tab_strip_icon_category_selected);
+                .setNormalIcon(R.drawable.nav_1_nor)
+                .setPressedIcon(R.drawable.nav_1_sel);
         mCustomTabView.addTab(tab1);
 
         Tab tab2 = new Tab().setText("资讯")
-                .setNormalIcon(R.drawable.ic_tab_strip_icon_pgc)
-                .setPressedIcon(R.drawable.ic_tab_strip_icon_pgc_selected);
+                .setNormalIcon(R.drawable.nav_2_nor)
+                .setPressedIcon(R.drawable.nav_2_sel);
         mCustomTabView.addTab(tab2);
 
         Tab tab3 = new Tab().setText("我的")
-                .setNormalIcon(R.drawable.ic_tab_strip_icon_profile)
-                .setPressedIcon(R.drawable.ic_tab_strip_icon_profile_selected);
+                .setNormalIcon(R.drawable.nav_3_nor)
+                .setPressedIcon(R.drawable.nav_3_sel);
         mCustomTabView.addTab(tab3);
 
         mCustomTabView.setCurrentItem(0);
