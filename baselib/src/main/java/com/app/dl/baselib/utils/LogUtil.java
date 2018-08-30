@@ -1,4 +1,4 @@
-package com.app.dl.networklib.utils;
+package com.app.dl.baselib.utils;
 import android.util.Log;
 
 //Logcat统一管理类

@@ -3,6 +3,7 @@ package com.app.dl.uilibrary.recycler
 import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.Drawable
+import android.graphics.drawable.GradientDrawable
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -11,6 +12,7 @@ import android.text.Spanned
 import android.util.SparseArray
 import android.view.View
 import android.widget.*
+import android.widget.LinearLayout.HORIZONTAL
 import com.app.dl.baselib.`fun`.ImageLoad
 import com.app.dl.uilibrary.R
 
@@ -268,9 +270,11 @@ class MyViewHolder(private val mConvertView: View, private val mContext: Context
     }
 
     fun setLinearLayout(llTags: Int, textViews: List<TextView>) {
-
-        val view = getView<LinearLayout>(llTags)
-
+        val viewGroup = getView<LinearLayout>(llTags)
+        viewGroup.orientation = HORIZONTAL
+        for (textView in textViews) {
+            viewGroup.addView(textView)
+        }
     }
 
 

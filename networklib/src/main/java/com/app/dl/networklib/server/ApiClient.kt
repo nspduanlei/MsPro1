@@ -1,8 +1,8 @@
 package com.app.dl.networklib.server
 
 import com.app.dl.baselib.Constants
+import com.app.dl.baselib.utils.LogUtil
 import com.app.dl.networklib.server.interceptors.MockInterceptor
-import com.app.dl.networklib.utils.LogUtil
 import com.daque.apilibrary.data.server.ApiStores
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

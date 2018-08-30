@@ -2,7 +2,9 @@ package com.app.dl.networklib.server.interceptors;
 
 import android.content.Context;
 import android.util.Log;
-import com.app.dl.networklib.utils.NetUtils;
+
+import com.app.dl.baselib.utils.NetUtils;
+
 import java.io.IOException;
 import okhttp3.CacheControl;
 import okhttp3.Interceptor;

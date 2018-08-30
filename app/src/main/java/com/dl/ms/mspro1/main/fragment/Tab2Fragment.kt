@@ -1,16 +1,15 @@
 package com.dl.ms.mspro1.main.fragment
 
 
-import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.app.dl.networklib.domain.model.Car
+import android.widget.LinearLayout
+import android.widget.TextView
 import com.app.dl.networklib.domain.model.Match
 import com.app.dl.networklib.domain.model.Person
 import com.app.dl.networklib.domain.model.base.Result
@@ -21,7 +20,6 @@ import com.app.dl.uilibrary.recycler.CommonRecyclerAdapter
 import com.app.dl.uilibrary.recycler.MyViewHolder
 import com.dl.ms.mspro1.R
 import com.dl.ms.mspro1.base.BaseFragment
-import com.dl.ms.mspro1.main.DetailActivity
 import kotlinx.android.synthetic.main.fragment_tab2.*
 
 class Tab2Fragment :  BaseFragment() {
@@ -39,8 +37,6 @@ class Tab2Fragment :  BaseFragment() {
 
         rv_match.layoutManager = LinearLayoutManager(activity,
                 LinearLayoutManager.HORIZONTAL,false)
-
-
 
         mAdapterMatch = object : CommonRecyclerAdapter<Match>(activity!!,
                 R.layout.item_match, mutableListOf()) {
@@ -61,24 +57,39 @@ class Tab2Fragment :  BaseFragment() {
                 R.layout.item_person, mutableListOf()) {
             override fun convert(holder: MyViewHolder, t: Person, position: Int) {
 
-                holder.setText(R.id.tv_title, t.img)
+                holder.setText(R.id.tv_title, t.name)
                         .setImageUrl(R.id.iv_image, t.img, GlideImageLoad.getInstance())
-                holder.setLinearLayout(R.id.ll_tags, t.tags)
 
+                val textViews = arrayListOf<TextView>()
+                for (tag in t.tags.split("-")) {
+                    val textView = TextView(activity)
+                    textView.text = tag
+                    textView.setBackgroundResource(R.drawable.shape_text_frame)
+                    textView.textSize = 10f
+                    textView.setTextColor(Color.parseColor("#F26D44"))
+                    textView.setPadding(10,10,10,10)
+
+                    val layoutParams =
+                            LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
+                                    ViewGroup.LayoutParams.WRAP_CONTENT)
+                    layoutParams.setMargins(0,0,10,0)
+                    textView.layoutParams = layoutParams
+                    textViews.add(textView)
+                }
+                holder.setLinearLayout(R.id.ll_tags, textViews)
             }
         }
-        rv_match.adapter = mAdapterPerson
+        rv_person.adapter = mAdapterPerson
 
         getDataMatch()
         getDataPerson()
-
     }
 
     private fun getDataMatch() {
         mPresenter.addSubscription(ApiClient.retrofit().queryMatch(),
                 object : ApiCallback<Result<List<Match>>>() {
                     override fun onSuccess(t: Result<List<Match>>) {
-                        //mAdapter.addAllC(t.data)
+                        mAdapterMatch.addAllC(t.data)
                     }
                     override fun onFailure(errorCode: Int, msg: String?) {
                         Log.e("testdl", "onFailure--------")
@@ -93,7 +104,7 @@ class Tab2Fragment :  BaseFragment() {
         mPresenter.addSubscription(ApiClient.retrofit().queryPerson(),
                 object : ApiCallback<Result<List<Person>>>() {
                     override fun onSuccess(t: Result<List<Person>>) {
-                        //mAdapter.addAllC(t.data)
+                        mAdapterPerson.addAllC(t.data)
                     }
                     override fun onFailure(errorCode: Int, msg: String?) {
                         Log.e("testdl", "onFailure--------")

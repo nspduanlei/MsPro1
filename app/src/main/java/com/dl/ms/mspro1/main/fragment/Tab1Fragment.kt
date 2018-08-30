@@ -46,7 +46,7 @@ class Tab1Fragment : BaseFragment() {
             override fun convert(holder: MyViewHolder, t: Car, position: Int) {
 
                 holder.setText(R.id.tv_title, t.name)
-                holder.setImageUrl(R.id.iv_icon, t.img, GlideImageLoad())
+                holder.setImageUrl(R.id.iv_icon, t.img, GlideImageLoad.getInstance())
                 holder.setOnItemClickListener(object : MyViewHolder.OnItemClickListener {
                             override fun onItemClick(v: View) {
                                 val intent = Intent(activity, DetailActivity::class.java)
@@ -119,7 +119,7 @@ class Tab1Fragment : BaseFragment() {
         private lateinit var tvDetail: TextView
 
         override fun updateUI(data: MyBanner) {
-            GlideImageLoad().loadUrlDefault(activity,
+            GlideImageLoad.getInstance().loadUrlDefault(activity,
                     imageView, data.url, R.drawable.banner_default)
 
             tvDetail.text = data.detail

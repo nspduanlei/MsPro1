@@ -1,4 +1,4 @@
-package com.app.dl.networklib.utils;
+package com.app.dl.baselib.utils;
 
 import android.app.Activity;
 import android.content.ComponentName;

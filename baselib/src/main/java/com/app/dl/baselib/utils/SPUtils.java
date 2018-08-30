@@ -1,7 +1,8 @@
-package com.app.dl.networklib.utils;
+package com.app.dl.baselib.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;
