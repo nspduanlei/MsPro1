@@ -8,4 +8,9 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="ImageStyle">
+        <item name="android:background">#eaeaea</item>
+        <item name="android:scaleType">center</item>
+    </style>
+
 </resources>

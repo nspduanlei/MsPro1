@@ -7,7 +7,7 @@
         android:id="@+id/iv_image"
         android:layout_width="match_parent"
         android:layout_height="189dp"
-        android:scaleType="center"/>
+        style="@style/ImageStyle"/>
 
     <TextView
         android:id="@+id/tv_detail"

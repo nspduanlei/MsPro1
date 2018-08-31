@@ -24,7 +24,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="52dp"
-                android:text="赛车手"
+                android:text="小明"
                 android:textColor="@color/titleColor"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -36,7 +36,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="5dp"
-                android:text="一名优秀的赛车手"
+                android:text="赛车爱好者"
                 android:textColor="#A7A7A7"
                 android:textSize="12sp" />
         </LinearLayout>

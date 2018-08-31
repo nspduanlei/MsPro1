@@ -11,7 +11,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginRight="10dp"
-        android:scaleType="center"/>
+        style="@style/ImageStyle"/>
 
     <TextView
         android:id="@+id/tv_title"
@@ -19,7 +19,8 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/iv_image"
         android:textColor="@color/titleColor"
-        android:textSize="16sp"/>
+        android:textSize="16sp"
+        android:layout_marginTop="10dp"/>
 
     <LinearLayout
         android:id="@+id/ll_tags"

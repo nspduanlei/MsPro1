@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import com.app.dl.baselib.Constants
 import com.app.dl.networklib.domain.model.Car
 import com.app.dl.networklib.domain.model.base.Result
 import com.app.dl.networklib.imageLoad.GlideImageLoad
@@ -119,8 +120,8 @@ class Tab1Fragment : BaseFragment() {
         private lateinit var tvDetail: TextView
 
         override fun updateUI(data: MyBanner) {
-            GlideImageLoad.getInstance().loadUrlDefault(activity,
-                    imageView, data.url, R.drawable.banner_default)
+            GlideImageLoad.getInstance().loadUrl(Constants.instance,
+                    imageView, data.url)
 
             tvDetail.text = data.detail
         }
