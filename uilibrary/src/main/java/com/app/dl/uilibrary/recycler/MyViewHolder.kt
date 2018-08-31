@@ -182,11 +182,11 @@ class MyViewHolder(private val mConvertView: View, private val mContext: Context
         return this
     }
 
-    fun setListView(lv_sku: Int, itemAdapter: BaseAdapter): MyViewHolder {
-        val listView = getView<ListView>(lv_sku)
-        listView.adapter = itemAdapter
-        return this
-    }
+//    fun setListView(lv_sku: Int, itemAdapter: BaseAdapter): MyViewHolder {
+//        val listView = getView<ListView>(lv_sku)
+//        listView.adapter = itemAdapter
+//        return this
+//    }
 
     fun setRbSelect(viewId: Int, isSelect: Boolean): MyViewHolder {
         val radioButton = getView<RadioButton>(viewId)

@@ -3,6 +3,15 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'duanlei'
+            keyPassword '455483293'
+            storeFile file('duanleiKey.jks')
+            storePassword '455483293'
+        }
+    }
+
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.dl.ms.mspro1"
@@ -25,7 +34,11 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            signingConfig signingConfigs.config
+            minifyEnabled true
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
