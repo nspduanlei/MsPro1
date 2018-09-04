@@ -18,6 +18,7 @@ import com.app.dl.networklib.server.ApiCallback
 import com.app.dl.networklib.server.ApiClient
 import com.app.dl.uilibrary.recycler.CommonRecyclerAdapter
 import com.app.dl.uilibrary.recycler.MyViewHolder
+import com.bigkoo.convenientbanner.ConvenientBanner
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator
 import com.bigkoo.convenientbanner.holder.Holder
 import com.dl.ms.mspro1.R
@@ -35,48 +36,12 @@ class Tab1Fragment : BaseFragment() {
         return inflater.inflate(R.layout.fragment_tab1, container, false)
     }
 
-    lateinit var mAdapter: CommonRecyclerAdapter<Car>
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        rv_icons.layoutManager = GridLayoutManager(activity,4) as RecyclerView.LayoutManager?
 
-        mAdapter = object : CommonRecyclerAdapter<Car>(activity!!,
-                R.layout.item_car_icons, mutableListOf()) {
-            override fun convert(holder: MyViewHolder, t: Car, position: Int) {
-
-                holder.setText(R.id.tv_title, t.name)
-                holder.setImageUrl(R.id.iv_icon, t.img, GlideImageLoad.getInstance())
-                holder.setOnItemClickListener(object : MyViewHolder.OnItemClickListener {
-                            override fun onItemClick(v: View) {
-                                val intent = Intent(activity, DetailActivity::class.java)
-                                intent.putExtra("detail", t.detail)
-                                startActivity(intent)
-                            }
-                        })
-            }
-        }
-        rv_icons.adapter = mAdapter
-
-        getData()
 
         initBanner()
-    }
-
-    private fun getData() {
-        mPresenter.addSubscription(ApiClient.retrofit().queryBrand(),
-                object : ApiCallback<Result<List<Car>>>() {
-                    override fun onSuccess(t: Result<List<Car>>) {
-                        mAdapter.addAllC(t.data)
-                    }
-                    override fun onFailure(errorCode: Int, msg: String?) {
-                        Log.e("testdl", "onFailure--------")
-                    }
-                    override fun onFinish() {
-                        Log.e("testdl", "onFinish--------")
-                    }
-                })
     }
 
 
@@ -104,10 +69,10 @@ class Tab1Fragment : BaseFragment() {
                 },
                 mLocalImages)
                 //设置两个点图片作为翻页指示器，不设置则没有指示器，可以根据自己需求自行配合自己的指示器,不需要圆点指示器可用不设
-                //.setPageIndicator(intArrayOf(R.drawable.shape_page_indicator, R.drawable.shape_page_indicator_focused))
+                .setPageIndicator(intArrayOf(R.drawable.shape_page_indicator, R.drawable.shape_page_indicator_focused))
                 //设置指示器的方向
                 .startTurning(4000) //4s自动滚动
-                //.setPageIndicatorAlign(ConvenientBanner.PageIndicatorAlign.ALIGN_PARENT_RIGHT)
+                .setPageIndicatorAlign(ConvenientBanner.PageIndicatorAlign.CENTER_HORIZONTAL)
                 .setOnItemClickListener { position ->
                     val myBanner = mLocalImages[position]
                 }

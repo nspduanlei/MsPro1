@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">北京-赛车PK</string>
+    <!--<string name="app_name">北京-赛车PK</string>-->
+    <string name="app_name">赛车频道</string>
 </resources>

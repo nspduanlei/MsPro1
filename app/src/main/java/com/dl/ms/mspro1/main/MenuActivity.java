@@ -14,6 +14,7 @@ import com.dl.ms.mspro1.R;
 import com.dl.ms.mspro1.main.fragment.MyFragment;
 import com.dl.ms.mspro1.main.fragment.Tab1Fragment;
 import com.dl.ms.mspro1.main.fragment.Tab2Fragment;
+import com.dl.ms.mspro1.main.fragment.Tab3Fragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +24,8 @@ public class MenuActivity extends AppCompatActivity implements
 
     private Tab1Fragment mTab1Fragment;
     private Tab2Fragment mTab2Fragment;
-    private MyFragment mTab3Fragment;
+    private Tab3Fragment mTab3Fragment;
+    private MyFragment mTab4Fragment;
 
     private List<Fragment> mFragments = new ArrayList<>();
 
@@ -40,19 +42,24 @@ public class MenuActivity extends AppCompatActivity implements
         CustomTabView mCustomTabView = findViewById(R.id.tabView);
 
         Tab tab1 = new Tab().setText("首页")
-                .setNormalIcon(R.drawable.nav_1_nor)
-                .setPressedIcon(R.drawable.nav_1_sel);
+                .setNormalIcon(R.drawable.tab_1)
+                .setPressedIcon(R.drawable.tab_1_sel);
         mCustomTabView.addTab(tab1);
 
-        Tab tab2 = new Tab().setText("资讯")
-                .setNormalIcon(R.drawable.nav_2_nor)
-                .setPressedIcon(R.drawable.nav_2_sel);
+        Tab tab2 = new Tab().setText("赛事")
+                .setNormalIcon(R.drawable.tab_2)
+                .setPressedIcon(R.drawable.tab_2_sel);
         mCustomTabView.addTab(tab2);
 
-        Tab tab3 = new Tab().setText("我的")
-                .setNormalIcon(R.drawable.nav_3_nor)
-                .setPressedIcon(R.drawable.nav_3_sel);
+        Tab tab3 = new Tab().setText("赛车")
+                .setNormalIcon(R.drawable.tab_3)
+                .setPressedIcon(R.drawable.tab_3_sel);
         mCustomTabView.addTab(tab3);
+
+        Tab tab4 = new Tab().setText("我的")
+                .setNormalIcon(R.drawable.tab_4)
+                .setPressedIcon(R.drawable.tab_4_sel);
+        mCustomTabView.addTab(tab4);
 
         mCustomTabView.setCurrentItem(0);
         mCustomTabView.setOnTabCheckListener(this);
@@ -107,10 +114,17 @@ public class MenuActivity extends AppCompatActivity implements
                 break;
             case 2:
                 if (mTab3Fragment == null) {
-                    mTab3Fragment = new MyFragment();
+                    mTab3Fragment = new Tab3Fragment();
                 }
                 addFragment(mTab3Fragment);
                 showFragment(mTab3Fragment);
+                break;
+            case 3:
+                if (mTab4Fragment == null) {
+                    mTab4Fragment = new MyFragment();
+                }
+                addFragment(mTab4Fragment);
+                showFragment(mTab4Fragment);
                 break;
         }
     }
@@ -123,9 +137,12 @@ public class MenuActivity extends AppCompatActivity implements
         } else if (mTab2Fragment == null && fragment instanceof Tab2Fragment) {
             mTab2Fragment = (Tab2Fragment) fragment;
             mFragments.add(mTab2Fragment);
-        } else if (mTab3Fragment == null && fragment instanceof MyFragment) {
-            mTab3Fragment = (MyFragment) fragment;
+        } else if (mTab3Fragment == null && fragment instanceof Tab3Fragment) {
+            mTab3Fragment = (Tab3Fragment) fragment;
             mFragments.add(mTab3Fragment);
+        } else if (mTab4Fragment == null && fragment instanceof MyFragment) {
+            mTab4Fragment = (MyFragment) fragment;
+            mFragments.add(mTab4Fragment);
         }
     }
 
