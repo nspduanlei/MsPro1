@@ -30,6 +30,8 @@
         <item name="android:drawableLeft">@drawable/shape_text_head</item>
         <item name="android:drawablePadding">5dp</item>
         <item name="android:padding">10dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
         <item name="android:text">发发嘎嘎阿啊哈哈法萨法司法公司刚刚嘎嘎嘎嘎嘎嘎</item>
     </style>
 
