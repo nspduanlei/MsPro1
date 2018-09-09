@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="60dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -24,7 +24,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="52dp"
-                android:text="小明"
+                android:text="Jack frandin"
                 android:textColor="@color/titleColor"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -36,17 +36,24 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="5dp"
-                android:text="赛车爱好者"
+                android:text="奥迪赛事著名车手，多次获得国际奖项"
                 android:textColor="#A7A7A7"
                 android:textSize="12sp" />
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/iv_head"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <FrameLayout
+            android:layout_width="87dp"
+            android:layout_height="87dp"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/bundle_mine_default_head" />
+            android:background="@drawable/bundle_mine_default_head">
+
+            <ImageView
+                android:id="@+id/iv_head"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/jack"
+                android:layout_gravity="center"/>
+        </FrameLayout>
     </FrameLayout>
 
     <LinearLayout
@@ -73,9 +80,9 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
-            android:background="#E8E8E8"
+            android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp" />
+            android:background="#E8E8E8" />
 
         <TextView
             android:id="@+id/tv_collect"
@@ -92,9 +99,9 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
-            android:background="#E8E8E8"
+            android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp"/>
+            android:background="#E8E8E8" />
 
         <TextView
             android:layout_width="match_parent"
@@ -110,9 +117,9 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
-            android:background="#E8E8E8"
+            android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp"/>
+            android:background="#E8E8E8" />
 
         <TextView
             android:id="@+id/tv_setting"

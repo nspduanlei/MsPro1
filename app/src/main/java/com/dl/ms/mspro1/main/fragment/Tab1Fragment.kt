@@ -82,18 +82,18 @@ class Tab1Fragment : BaseFragment() {
     inner class LocalImageHolderView(itemView: View?) : Holder<MyBanner>(itemView) {
 
         private lateinit var imageView: ImageView
-        private lateinit var tvDetail: TextView
+        //private lateinit var tvDetail: TextView
 
         override fun updateUI(data: MyBanner) {
-            GlideImageLoad.getInstance().loadUrl(Constants.instance,
-                    imageView, data.url)
+            GlideImageLoad.getInstance().loadUrlRound(Constants.instance,
+                    imageView, data.url, 5)
 
-            tvDetail.text = data.detail
+            //tvDetail.text = data.detail
         }
 
         override fun initView(itemView: View) {
             imageView = itemView.findViewById(R.id.iv_image)
-            tvDetail = itemView.findViewById(R.id.tv_detail)
+            //tvDetail = itemView.findViewById(R.id.tv_detail)
         }
     }
     /***************轮播 end*********************/

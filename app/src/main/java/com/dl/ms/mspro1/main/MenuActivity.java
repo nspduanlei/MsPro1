@@ -51,7 +51,7 @@ public class MenuActivity extends AppCompatActivity implements
                 .setPressedIcon(R.drawable.tab_2_sel);
         mCustomTabView.addTab(tab2);
 
-        Tab tab3 = new Tab().setText("赛车")
+        Tab tab3 = new Tab().setText("咨询")
                 .setNormalIcon(R.drawable.tab_3)
                 .setPressedIcon(R.drawable.tab_3_sel);
         mCustomTabView.addTab(tab3);

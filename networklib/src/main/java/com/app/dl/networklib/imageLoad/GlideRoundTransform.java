@@ -24,10 +24,8 @@ public class GlideRoundTransform extends BitmapTransformation {
 
   /**
    * 构造函数 默认圆角半径 4dp
-   *
-   * @param context Context
    */
-  public GlideRoundTransform(Context context) {
+  public GlideRoundTransform() {
     this (4);
   }
 

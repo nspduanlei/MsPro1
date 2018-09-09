@@ -31,7 +31,7 @@
     <com.app.dl.uilibrary.tab.CustomTabView
         android:id="@+id/tabView"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
+        android:layout_height="50dp"
         android:background="#ffffff"
         android:orientation="horizontal"
         app:normalColor="@android:color/darker_gray"

@@ -7,8 +7,11 @@ import com.app.dl.baselib.fun.ImageLoad;
 import com.app.dl.baselib.utils.StringUtils;
 import com.app.dl.networklib.R;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.bumptech.glide.request.RequestOptions;
+
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
 /**
  * Created by duanlei on 2016/11/8.
@@ -86,6 +89,17 @@ public class GlideImageLoad implements ImageLoad {
         if (StringUtils.isNullOrEmpty(url)) {
             return;
         }
+
+        RequestOptions options = new RequestOptions()
+                .placeholder(R.drawable.icon_default)
+                .error(R.drawable.icon_default)
+                .centerCrop();
+
+        Glide.with(context)
+                .load(url)
+                .apply(options)
+                .apply(RequestOptions.bitmapTransform(new RoundedCornersTransformation(20, 10)))
+                .into(iv);
 //        Glide.with(context)
 //                .load(url)
 //                .centerCrop()

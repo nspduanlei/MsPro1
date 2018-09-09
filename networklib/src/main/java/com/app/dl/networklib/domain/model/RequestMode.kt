@@ -11,3 +11,5 @@ data class Match(val title: String, val img: String,
                  val detail: String, val status: String)
 
 data class Person(val name: String, val img: String, val tags: String)
+
+data class New(val name: String, val img: String, val detail: String, val time: String)

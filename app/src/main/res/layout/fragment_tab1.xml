@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="50dp">
+    android:paddingTop="40dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,60 +15,65 @@
         <com.dl.ms.mspro1.view.MyConvenientBanner
             android:id="@+id/convenientBanner"
             android:layout_width="match_parent"
-            android:layout_height="239dp"
+            android:layout_height="220dp"
             app:canLoop="true"/>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="164dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp">
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:background="@drawable/home_1_1"/>
 
-            <TextView
-                style="@style/TextInfoStyle"
-                android:text="官方推荐 2018赛季F1阿塞拜疆站排气规则解析"/>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="#eaeaea"/>
-            <TextView
-                style="@style/TextInfoStyle"
-                android:text="空寂山谷传来引擎吟唱 韩岳试驾M5叹吾谁与归"/>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="#eaeaea"/>
-            <TextView
-                style="@style/TextInfoStyle"
-                android:text="小红牛侥幸脱险 小鲜肉二人组阿塞拜疆排位赛失误"/>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="#eaeaea"/>
-            <TextView
-                style="@style/TextInfoStyle"
-                android:text="超级巨星跨界秀 NFL格隆考斯基助阵MotoGP美国站"/>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="#eaeaea"/>
-            <TextView
-                style="@style/TextInfoStyle"
-                android:text="拉力车手东川搅越野局 黔军开陕车入滇搞哪样"/>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="#eaeaea"/>
-            <TextView
-                style="@style/TextInfoStyle"
-                android:text="越野赛车要攀爬灵鹫山 国际森林汽车穿越衢州"/>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="#eaeaea"/>
-            <TextView
-                style="@style/TextInfoStyle"
-                android:text="泰飚润滑油亮相东川 携手多家车队力求佳绩"/>
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:background="@drawable/home_1_2"/>
 
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:background="@drawable/home_1_3"/>
         </LinearLayout>
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/home_2"
+            android:scaleType="fitXY"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="97dp">
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:background="@drawable/home_3_1"/>
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:background="@drawable/home_3_2"/>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/home_4"
+            android:scaleType="fitXY"/>
+
     </LinearLayout>
 </ScrollView>

@@ -9,8 +9,7 @@
     </style>
 
     <style name="ImageStyle">
-        <item name="android:background">#eaeaea</item>
-        <item name="android:scaleType">center</item>
+        <item name="android:scaleType">fitXY</item>
     </style>
 
     <style name="LlStyle">

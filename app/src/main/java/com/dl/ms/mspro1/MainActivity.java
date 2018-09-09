@@ -22,5 +22,7 @@ public class MainActivity extends MLMain {
                 "com.dl.ms.mspro1", "com.dl.ms.mspro1.main.MenuActivity",
                 "com.dl.ms.mspro1.mutil.MWeb", "com.dl.ms.mspro1.mutil.MUp");
 
+
+
     }
 }
